@@ -8,7 +8,12 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 function RandomJokes() {
   const { data, error } = useSWR(
     "https://v2.jokeapi.dev/joke/Any?type=single&amount=10",
-    fetcher
+    fetcher,
+    {
+      revalidateIfStale: false,
+      revalidateOnFocus: false,
+      revalidateOnReconnect: false,
+    } // disable Automatic revalidation
   );
 
   console.log(data);
