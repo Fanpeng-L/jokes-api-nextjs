@@ -1,7 +1,7 @@
 "use client";
 
 import useSWR from "swr";
-import { Typography } from "@mui/material";
+import { Card, Typography } from "@mui/material";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
@@ -24,14 +24,30 @@ function RandomJokes() {
 
   return (
     <div>
-      <Typography variant="h4" fontWeight={600}>
-        Here are 10 jokes🤡 for you:
+      <Typography
+        variant="h4"
+        sx={{
+          fontSize: 30,
+          fontWeight: 600,
+          textAlign: "center",
+          margin: 6,
+        }}
+      >
+        Here are 10 random jokes🤡 for you:
       </Typography>
-      <ul>
+      <ul className="flex flex-col justify-center items-center">
         {data.jokes.map((joke, index) => (
-          <li key={index}>
+          <Card
+            key={index}
+            sx={{
+              width: 800,
+              margin: 2,
+              padding: 2,
+              backgroundColor: "#f6f6f6",
+            }}
+          >
             {index + 1}. {joke.joke}
-          </li>
+          </Card>
         ))}
       </ul>
     </div>

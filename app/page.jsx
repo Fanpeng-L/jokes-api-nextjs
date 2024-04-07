@@ -1,13 +1,13 @@
-import Navbar from "./components/Navbar";
-import SearchJokes from "./components/SearchJokes";
 import RandomJokes from "./randomJokes/page";
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
 
 function Home() {
   return (
     <div>
-      <Navbar />
-      <SearchJokes />
-      {/* <RandomJokes /> */}
+      <RandomJokes />
     </div>
   );
 }
