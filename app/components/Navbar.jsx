@@ -21,7 +21,7 @@ function Navbar() {
           <Link href="/searchJokes">Search</Link>
         </li>
         <li>
-          <Link href="/">Category</Link>
+          <Link href="/categoryJokes">Category</Link>
         </li>
       </ul>
     </div>
