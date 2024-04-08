@@ -1,11 +1,12 @@
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Link from "next/link";
 
 function Navbar() {
   return (
-    <div className="flex bg-sky-50 justify-between items-center p-2">
+    <div className="flex bg-sky-50 justify-between items-center px-8 py-2">
       <Typography
         variant="h3"
+        sx={{ fontSize: { xs: 25, md: 35, lg: 40 } }}
         component={Link}
         href="/"
         fontWeight={700}
@@ -13,17 +14,11 @@ function Navbar() {
       >
         Hey Jokes
       </Typography>
-      <ul className="flex gap-8 mr-10 font-bold">
-        <li>
-          <Link href="/">Home</Link>
-        </li>
-        <li>
-          <Link href="/searchJokes">Search</Link>
-        </li>
-        <li>
-          <Link href="/categoryJokes">Category</Link>
-        </li>
-      </ul>
+      <Box sx={{ display: "flex", gap: 2, fontWeight: 600 }}>
+        <Link href="/">Home</Link>
+        <Link href="/searchJokes">Search</Link>
+        <Link href="/categoryJokes">Category</Link>
+      </Box>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Card, Typography } from "@mui/material";
+import { Box, Button, Card, Typography } from "@mui/material";
 import useSWR from "swr";
 import { useState } from "react";
 
@@ -43,12 +43,26 @@ function filterJokes() {
       <div>
         <Typography
           variant="h4"
-          sx={{ fontWeight: 600, textAlign: "center", margin: 4 }}
+          sx={{
+            fontWeight: 600,
+            textAlign: "center",
+            margin: 4,
+            fontSize: { xs: 25, md: 30, lg: 35 },
+          }}
         >
           Which category of jokes you want to get?
         </Typography>
 
-        <div className="flex justify-center items-center gap-2 mb-8">
+        <Box
+          sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: 2,
+            marginBottom: 6,
+          }}
+        >
           <Button
             variant="contained"
             sx={{ backgroundColor: "#D5E9F3", color: "#000000" }}
@@ -91,7 +105,7 @@ function filterJokes() {
           >
             Christmas
           </Button>
-        </div>
+        </Box>
       </div>
 
       <div className="flex flex-col justify-center items-center">
@@ -99,9 +113,10 @@ function filterJokes() {
           <Card
             key={index}
             sx={{
-              width: 800,
+              width: { xs: 350, md: 600, lg: 800 },
+              fontSize: 20,
               margin: 2,
-              padding: 2,
+              padding: 4,
               backgroundColor: "#f6f6f6",
             }}
           >
@@ -114,28 +129,5 @@ function filterJokes() {
     </div>
   );
 }
-
-//   return (
-//     <div>
-//
-
-//       <ul className="flex flex-col justify-center items-center">
-//         {data.jokes.map((joke, index) => (
-//           <Card
-//             key={index}
-//             sx={{
-//               width: 800,
-//               margin: 2,
-//               padding: 2,
-//               backgroundColor: "#f6f6f6",
-//             }}
-//           >
-//             {index + 1}. {joke.joke}
-//           </Card>
-//         ))}
-//       </ul>
-//     </div>
-//   );
-// }
 
 export default filterJokes;

@@ -66,7 +66,7 @@ function SearchJokes() {
 
       <div className="flex justify-center flex-col items-center">
         <Typography variant="h5" fontWeight={600} marginY="2rem">
-          Search Jokes Here: {input}
+          Search Jokes: {input}
         </Typography>
         {data && data.jokes ? (
           <div>
@@ -82,7 +82,8 @@ function SearchJokes() {
               {data.jokes.map((joke, index) => (
                 <Card
                   sx={{
-                    width: 800,
+                    width: { xs: 400, md: 600, lg: 800 },
+                    fontSize: 20,
                     margin: 2,
                     padding: 2,
                     backgroundColor: "#f6f6f6",
@@ -90,7 +91,6 @@ function SearchJokes() {
                   key={index}
                 >
                   <CardContent>
-                    {index + 1}.{" "}
                     {joke.type === "single" ? (
                       joke.joke
                     ) : (
